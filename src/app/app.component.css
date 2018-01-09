@@ -1,0 +1,10 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-container {
+    flex: 1;
+}
+
+.app-name {
+    margin-left: 8px;
+}
