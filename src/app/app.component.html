@@ -1,32 +1,26 @@
-<div style="height: 100vh;">
-  <mat-toolbar color="primary">
+
+  <mat-toolbar color="primary" class="mat-elevation-z7">
     <div fxShow="true" fxHide.gt-sm="true">
-        <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>        
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
     </div>
     <span class="app-name">FRCGadgets</span>
-    <span class="example-spacer"></span>
+    <span class="spacer"></span>
     <div fxShow="true" fxHide.lt-md="true">
-      <a href="#" mat-button>Menu Item 1</a>
-      <a href="#" mat-button>Menu Item 2</a>
-      <a href="#" mat-button>Menu Item 3</a>
-      <a href="#" mat-button>Menu Item 4</a>
-      <a href="#" mat-button>Menu Item 5</a>
-      <a href="#" mat-button>Menu Item 6</a>
+      <a routerLink="/" mat-button>About</a>
+      <a routerLink="." mat-button><em>More Coming Soon</em></a>
     </div>
-
   </mat-toolbar>
 
-  <mat-sidenav-container fxFlexFill class="example-container">
-    <mat-sidenav #sidenav fxLayout="column">
-      <div fxLayout="column">
-        <a href="#" mat-button>Menu Item 1</a>
-        <a href="#" mat-button>Menu Item 2</a>
-        <a href="#" mat-button>Menu Item 3</a>
-        <a href="#" mat-button>Menu Item 4</a>
-        <a href="#" mat-button>Menu Item 5</a>
-        <a href="#" mat-button>Menu Item 6</a>
-      </div>
+  <mat-sidenav-container fxFlexFill class="container">
+    <mat-sidenav #sidenav fxLayout="column" fixedTopGap="56">
+      <mat-nav-list fxLayout="column">
+        <a routerLink="/" mat-list-item><mat-icon>info</mat-icon>About</a>
+        <a routerLink="." mat-list-item><em>More Coming Soon</em></a>
+      </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
   </mat-sidenav-container>
-</div>
